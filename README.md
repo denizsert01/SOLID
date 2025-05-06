@@ -1,0 +1,35 @@
+SOLID PRINCIPLES
+1. single responsibility principle (SRP) = bir sınıfın ya da metodun sadece tek bir sorumluluğu olmalı
+  bir iş yapması demek, 1 class içinde 10 metod 3 property olabilir ama 1 amaca hizmet etmesidir.
+  öğrenmesi en kolay olan ama uygulaması en zor olan prensiptir.
+2. open/closed principle (OCP) = var olan sınıfı değiştirmeden yeni davranışlar eklenebilmelidir.
+  soyut sınıflar(kalıtım) ve arayüzler aracılığıyla
+  open extension-closed modification
+  yapı zamanla geliştirilebilmeli ama var olan şey değiştirilmemeli - 1 kere yaz bir daha dokunulmasın
+3. liskov substitution principle (LSP) = bir alt sınıf, üst sınıfın yerine sorunsuzca geçebilmeli
+  yani base sınıf yerine derived sınıf kullanılınca düzgün çalışmalı. kalıtım doğru şekilde yapılmalı
+  polymorphism'de ToString() metodunun değişmemesi örneğin.
+4. interface segregation principle (ISP) = kullanılmayan arayüz yöntemlerine bağımlı kalınmamalı
+  büyük arayüzleri böl - küçük, özelleşmiş arayüzler
+  kullanıcı sadece ihtiyacı olan metoda erişmeli
+5. dependency inversion principle (DIP) = bağımlılığın tersine çevrilmesi, yüksek seviyeli sınıflar, düşük seviyeli sınıflara bağımlı olmamalı. her ikisi de soyutlamalara bağımlı olmalı.
+  tightly coupled olmaması gerek. loosely coupled olmalı. çünkü içerdeki sınıf değiştirirken dıştaki da değişmek zorunda olur, bu da open/closed principle'a uymaz.
+  bu amaçla interface kullanılır. Concrete sınıf değiştirilirse Abstract olan interface'e dokunulmasın diye.
+  bu da bize esneklik sağlar.
+  3 yöntemi var: 
+    1- constructor injection, 
+    2- method injection, 
+    3- property injection
+  neden en çok ctor injection? çünkü kullanıcıyı bir şeylere zorlar.
+  parametrik ctor varsa default ctor yoktur. parametre gelme zorunluluğu olur.
+  method ya da prop injectionda böyle bir zorunluluk yok.
+
+Uncle Bob - Robert Martin ortaya atan kişi.
+Kitabı: Clean Code 
+Sektördeki prensipleri ve kendi prensiplerini derlemiştir.
+Akronimlerin akronimleridir.
+
+Bu 5 prensibin birbirini desteklediğini görüyoruz. OCP varsa SRP'ye de uygun olmalı; DI, hem SRP hem OCP'ye uygun olmalıdır.
+En önemlileri 1-2-5 (SRP, OCP, DIP)
+
+hatırlatma: C# da mutliple inheritance yoktu, bu da diamond problemdi. interface kullanarak bu sorun çözülürdü.
