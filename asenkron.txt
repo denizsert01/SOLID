@@ -1,0 +1,5 @@
+multithread = time-shared, 
+senkron = sırayla,
+asenkron = sırasız, paralel iş hatları, verimlilik önemli. node.js ile başlamıştır.
+	mvc ile mvc core arasındaki performans farkı asenkrondan dolayı x4
+	async, Task, await
